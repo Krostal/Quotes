@@ -28,8 +28,8 @@ final class QuotesListCellTableViewCell: UITableViewCell {
 
 extension QuotesListCellTableViewCell: Configurable {
     func configure(with model: Quote) {
-        dateLabel.text = model.date.formatted(date: .abbreviated, time: .shortened)
-        categoryLabel.text = model.category
-        quoteLabel.text = model.text
+//        dateLabel.text = model.date.formatted(date: .abbreviated, time: .shortened)
+//        categoryLabel.text = model.category
+//        quoteLabel.text = model.text
     }
 }

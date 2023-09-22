@@ -5,7 +5,7 @@ final class CategoryListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    private var categories: [Category] = []
+    private var categories: [Quote] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ extension CategoryListViewController: UITableViewDataSource, UITableViewDelegate
         
         var content = categoryCell.defaultContentConfiguration()
         
-        content.text = category.name
+        content.text = category.category
         
         content.textProperties.color = .systemPurple
         content.image = UIImage(systemName: "book")
