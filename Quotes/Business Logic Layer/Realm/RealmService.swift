@@ -4,8 +4,9 @@ import RealmSwift
 protocol RealmServicProtocol {
     func saveQuote(_ quote: Quote) -> Bool
     func fetchQuotes() -> [Quote]
-    func delete(usingID id: String) -> Bool
-    func update(_ quote: Quote) -> Bool
+    func deleteQuote(usingID id: String) -> Bool
+    func removeAllQuotes() -> Bool
+    func fetchCategories() -> [String]
 }
 
 final class RealmService: RealmServicProtocol {
@@ -15,10 +16,18 @@ final class RealmService: RealmServicProtocol {
             let realm = try Realm()
             
             let handler: () -> Void = {
-                realm.create(
-                    QuoteRealmModel.self,
-                    value: quote.keyedValues
-                )}
+                if let existingQuote = realm.object(ofType: QuoteRealmModel.self, forPrimaryKey: quote.id) {
+                    realm.delete(existingQuote)
+                    realm.create(
+                        QuoteRealmModel.self,
+                        value: quote.keyedValues
+                    )
+                } else {
+                    realm.create(
+                        QuoteRealmModel.self,
+                        value: quote.keyedValues
+                    )}
+            }
             
             if realm.isInWriteTransaction {
                 handler()
@@ -50,11 +59,11 @@ final class RealmService: RealmServicProtocol {
         }
     }
     
-    func delete(usingID id: String) -> Bool {
+    func deleteQuote(usingID id: String) -> Bool {
         do {
             let realm = try Realm()
             
-            let objects = realm.objects(QuoteRealmModel.self)
+            let objects = realm.objects(QuoteRealmModel.self).filter{ $0.id == id }
             let handler: () -> Void = {
                 realm.delete(objects)
             }
@@ -73,20 +82,15 @@ final class RealmService: RealmServicProtocol {
         }
     }
     
-    func update(_ quote: Quote) -> Bool {
+    func removeAllQuotes() -> Bool {
         do {
             let realm = try Realm()
             
-            let quoteRealmModel = QuoteRealmModel(quote: quote)
-            let handler: () -> Void = {
-                realm.add(quoteRealmModel, update: .modified)
-            }
-            
             if realm.isInWriteTransaction {
-                handler()
+                realm.deleteAll()
             } else {
                 try realm.write {
-                    handler()
+                    realm.deleteAll()
                 }
             }
             return true
@@ -96,6 +100,16 @@ final class RealmService: RealmServicProtocol {
         }
     }
     
+    func fetchCategories() -> [String] {
+        do {
+            let realm = try Realm()
+            let categories = realm.objects(QuoteRealmModel.self).compactMap { $0.category }
+            return Array(categories)
+        } catch {
+            print(error.localizedDescription)
+            return []
+        }
+    }
 }
 
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vrb-xo-Nth">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nKD-uW-cL4">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -10,25 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Quotes-->
-        <scene sceneID="8sw-Cv-Wmq">
-            <objects>
-                <navigationController title="Quotes" id="Vrb-xo-Nth" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OeQ-pd-xyX">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="O4v-Xc-z1B">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="4Vg-8Z-d3C" kind="relationship" relationship="rootViewController" id="lLv-OH-55J"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zps-DU-lYo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1914" y="11"/>
-        </scene>
         <!--Категории-->
         <scene sceneID="jf0-Po-i1S">
             <objects>
@@ -64,11 +45,14 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="tintColor" systemColor="systemPurpleColor"/>
+                                        <connections>
+                                            <segue destination="Jqk-UV-Qn7" kind="show" identifier="ShowDetails" id="oxa-sl-L27"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="Qge-vb-eDj" id="aIq-vB-Awa"/>
-                                    <outlet property="delegate" destination="Qge-vb-eDj" id="dlO-Am-4KS"/>
+                                    <outlet property="dataSource" destination="Qge-vb-eDj" id="wZk-Y7-LAC"/>
+                                    <outlet property="delegate" destination="Qge-vb-eDj" id="cor-DE-6fu"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -82,13 +66,71 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Категории" image="list.bullet.rectangle.fill" catalog="system" id="uFL-PG-wNw"/>
+                    <navigationItem key="navigationItem" title="Категории" id="6wD-Jb-1nP"/>
                     <connections>
-                        <outlet property="tableView" destination="QkP-pF-gWR" id="kQJ-hm-j0z"/>
+                        <outlet property="tableView" destination="QkP-pF-gWR" id="UZ2-lm-lDd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M11-zq-NMC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="736.64122137404581" y="693.66197183098598"/>
+            <point key="canvasLocation" x="1920" y="892"/>
+        </scene>
+        <!--Category Detail View Controller-->
+        <scene sceneID="ltG-uL-m7f">
+            <objects>
+                <viewController id="Jqk-UV-Qn7" customClass="CategoryDetailViewController" customModule="Quotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8TD-Ev-8rM">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mku-Xz-TNA">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CategoryDetailCell" rowHeight="150" id="5ac-bh-inD" customClass="CategoryDetailTableViewCell" customModule="Quotes" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5ac-bh-inD" id="xMH-tv-owJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" text="label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlu-Fr-1Q0">
+                                                    <rect key="frame" x="20" y="118.66666666666667" width="353" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemPurpleColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qlu-Fr-1Q0" firstAttribute="leading" secondItem="xMH-tv-owJ" secondAttribute="leadingMargin" id="6Jj-4S-tWK"/>
+                                                <constraint firstItem="qlu-Fr-1Q0" firstAttribute="bottom" secondItem="xMH-tv-owJ" secondAttribute="bottomMargin" id="YTp-pS-V67"/>
+                                                <constraint firstItem="qlu-Fr-1Q0" firstAttribute="trailing" secondItem="xMH-tv-owJ" secondAttribute="trailingMargin" id="kSb-gP-dik"/>
+                                                <constraint firstItem="qlu-Fr-1Q0" firstAttribute="top" relation="greaterThanOrEqual" secondItem="xMH-tv-owJ" secondAttribute="topMargin" id="tdg-fH-48O"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="quoteLabel" destination="qlu-Fr-1Q0" id="yXL-b6-xKm"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Jqk-UV-Qn7" id="meS-en-Qga"/>
+                                    <outlet property="delegate" destination="Jqk-UV-Qn7" id="SGu-x8-CCq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="htT-bz-OGa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zNH-e5-xip"/>
+                    <connections>
+                        <outlet property="tableView" destination="mku-Xz-TNA" id="Bar-OH-9Lz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IdQ-vD-x45" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2965.6488549618321" y="891.54929577464793"/>
         </scene>
         <!--Загрузить-->
         <scene sceneID="mLX-4s-r6r">
@@ -159,7 +201,46 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mPl-RJ-ma3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="736.64122137404581" y="-738.0281690140846"/>
+            <point key="canvasLocation" x="1920" y="-746"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jQx-P2-d96">
+            <objects>
+                <navigationController id="nKD-uW-cL4" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ImV-A1-AVz">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="4Vg-8Z-d3C" kind="relationship" relationship="rootViewController" id="YBr-nf-uwy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="juc-DU-9Ga" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1976" y="11"/>
+        </scene>
+        <!--Цитаты-->
+        <scene sceneID="s6Y-SN-N9U">
+            <objects>
+                <navigationController id="dfm-vy-kBv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Цитаты" image="quote.bubble.fill" catalog="system" id="pj7-SI-cEh"/>
+                    <navigationBar key="navigationBar" clipsSubviews="YES" contentMode="top" id="7Ie-Pa-o7P">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" systemColor="systemPurpleColor"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YZo-aw-xGQ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="u80-QZ-YE2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0z1-9T-ujJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="511" y="11"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="o3t-Bg-VQZ">
@@ -174,18 +255,39 @@
                     </tabBar>
                     <connections>
                         <segue destination="L77-Oh-kjt" kind="relationship" relationship="viewControllers" id="EU3-Du-gwW"/>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="0Dn-WU-j4Z"/>
-                        <segue destination="Qge-vb-eDj" kind="relationship" relationship="viewControllers" id="Pb6-tv-pZv"/>
+                        <segue destination="dfm-vy-kBv" kind="relationship" relationship="viewControllers" id="LNn-R0-KFN"/>
+                        <segue destination="c0C-in-dsT" kind="relationship" relationship="viewControllers" id="mYt-MS-fsF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MMu-i7-m0v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-915" y="11"/>
         </scene>
-        <!--Мои цитаты-->
+        <!--Категории-->
+        <scene sceneID="LNa-39-3bM">
+            <objects>
+                <navigationController id="c0C-in-dsT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Категории" image="list.bullet.rectangle.fill" catalog="system" id="tld-ac-zn1"/>
+                    <navigationBar key="navigationBar" clipsSubviews="YES" contentMode="top" id="AGf-f9-Em3">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemPurpleColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" systemColor="systemPurpleColor"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Qge-vb-eDj" kind="relationship" relationship="rootViewController" id="12h-ab-tDq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KFF-GP-guH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="511" y="892"/>
+        </scene>
+        <!--Список цитат-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="QuoteListViewController" id="BYZ-38-t0r" customClass="QuoteListViewController" customModule="Quotes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuoteListViewController" title="Список цитат" id="BYZ-38-t0r" customClass="QuoteListViewController" customModule="Quotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -202,7 +304,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQj-6M-JQC">
-                                                    <rect key="frame" x="40" y="16" width="313" height="20"/>
+                                                    <rect key="frame" x="25" y="16" width="343" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="H8Z-5s-F7W"/>
                                                     </constraints>
@@ -211,13 +313,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="251" text="&quot;Циатата&quot;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwa-if-66y">
-                                                    <rect key="frame" x="40" y="148.66666666666666" width="313" height="20.333333333333343"/>
+                                                    <rect key="frame" x="25" y="163.66666666666666" width="343" height="20.333333333333343"/>
                                                     <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                                     <color key="textColor" systemColor="systemPurpleColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Категория" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWv-io-6lz">
-                                                    <rect key="frame" x="40" y="41" width="313" height="20"/>
+                                                    <rect key="frame" x="25" y="41" width="343" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="FWq-Oo-CVH"/>
                                                     </constraints>
@@ -227,28 +329,28 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="bwa-if-66y" firstAttribute="bottom" secondItem="Yzg-An-5gh" secondAttribute="bottomMargin" constant="-20" id="3Eg-4m-Ypm"/>
+                                                <constraint firstItem="bwa-if-66y" firstAttribute="bottom" secondItem="Yzg-An-5gh" secondAttribute="bottomMargin" constant="-5" id="3Eg-4m-Ypm"/>
                                                 <constraint firstItem="oWv-io-6lz" firstAttribute="top" secondItem="eQj-6M-JQC" secondAttribute="bottom" constant="5" id="CpM-MX-vhI"/>
-                                                <constraint firstItem="oWv-io-6lz" firstAttribute="leading" secondItem="Yzg-An-5gh" secondAttribute="leadingMargin" constant="20" id="Fvv-FI-kJ6"/>
-                                                <constraint firstItem="oWv-io-6lz" firstAttribute="trailing" secondItem="Yzg-An-5gh" secondAttribute="trailingMargin" constant="-20" id="RAa-sQ-CM2"/>
-                                                <constraint firstItem="bwa-if-66y" firstAttribute="trailing" secondItem="Yzg-An-5gh" secondAttribute="trailingMargin" constant="-20" id="S1D-fu-SQf"/>
+                                                <constraint firstItem="oWv-io-6lz" firstAttribute="leading" secondItem="Yzg-An-5gh" secondAttribute="leadingMargin" constant="5" id="Fvv-FI-kJ6"/>
+                                                <constraint firstItem="oWv-io-6lz" firstAttribute="trailing" secondItem="Yzg-An-5gh" secondAttribute="trailingMargin" constant="-5" id="RAa-sQ-CM2"/>
+                                                <constraint firstItem="bwa-if-66y" firstAttribute="trailing" secondItem="Yzg-An-5gh" secondAttribute="trailingMargin" constant="-5" id="S1D-fu-SQf"/>
                                                 <constraint firstItem="bwa-if-66y" firstAttribute="top" relation="greaterThanOrEqual" secondItem="oWv-io-6lz" secondAttribute="bottom" constant="5" id="fG9-Z3-do0"/>
-                                                <constraint firstItem="eQj-6M-JQC" firstAttribute="leading" secondItem="Yzg-An-5gh" secondAttribute="leadingMargin" constant="20" id="qGM-jr-5EO"/>
-                                                <constraint firstItem="eQj-6M-JQC" firstAttribute="trailing" secondItem="Yzg-An-5gh" secondAttribute="trailingMargin" constant="-20" id="t8x-nK-4UG"/>
+                                                <constraint firstItem="eQj-6M-JQC" firstAttribute="leading" secondItem="Yzg-An-5gh" secondAttribute="leadingMargin" constant="5" id="qGM-jr-5EO"/>
+                                                <constraint firstItem="eQj-6M-JQC" firstAttribute="trailing" secondItem="Yzg-An-5gh" secondAttribute="trailingMargin" constant="-5" id="t8x-nK-4UG"/>
                                                 <constraint firstItem="eQj-6M-JQC" firstAttribute="top" secondItem="Yzg-An-5gh" secondAttribute="topMargin" constant="5" id="wxe-o4-xtb"/>
-                                                <constraint firstItem="bwa-if-66y" firstAttribute="leading" secondItem="Yzg-An-5gh" secondAttribute="leadingMargin" constant="20" id="xoD-73-Gxp"/>
+                                                <constraint firstItem="bwa-if-66y" firstAttribute="leading" secondItem="Yzg-An-5gh" secondAttribute="leadingMargin" constant="5" id="xoD-73-Gxp"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="categoryLabel" destination="oWv-io-6lz" id="Gwn-Wq-pvq"/>
-                                            <outlet property="dateLabel" destination="eQj-6M-JQC" id="fuU-Oe-2NE"/>
-                                            <outlet property="quoteLabel" destination="bwa-if-66y" id="ug8-Zu-nrO"/>
+                                            <outlet property="categoryLabel" destination="oWv-io-6lz" id="7qf-RT-vze"/>
+                                            <outlet property="dateLabel" destination="eQj-6M-JQC" id="dta-q3-Vgy"/>
+                                            <outlet property="quoteLabel" destination="bwa-if-66y" id="ERj-kw-gsa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="N12-6u-JhW"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="EzB-rc-tSH"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ZdP-kh-EBI"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="0fp-az-tGA"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -262,13 +364,21 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Мои цитаты" image="quote.bubble.fill" catalog="system" id="WAD-t8-DYv"/>
+                    <navigationItem key="navigationItem" title="Список цитат" id="ClY-HO-PoI">
+                        <barButtonItem key="rightBarButtonItem" title="Удалить всё" id="a0g-bU-VqC">
+                            <color key="tintColor" systemColor="systemPurpleColor"/>
+                            <connections>
+                                <action selector="deleteButtonTapped:" destination="BYZ-38-t0r" id="1hg-Ep-3vI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="vav-yq-Syj" id="31g-IS-P9l"/>
+                        <outlet property="tableView" destination="vav-yq-Syj" id="9kk-Jw-85s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="736.64122137404581" y="-5.6338028169014089"/>
+            <point key="canvasLocation" x="1920" y="11"/>
         </scene>
     </scenes>
     <resources>

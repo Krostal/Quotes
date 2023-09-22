@@ -21,7 +21,7 @@ struct Quote: Decodable {
         
         let categories = try container.decode([String].self, forKey: .categories)
         if let firstCategory = categories.first, !firstCategory.isEmpty {
-            category = firstCategory
+            category = firstCategory.capitalized
         } else {
             category = "Без категории"
         }

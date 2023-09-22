@@ -5,6 +5,10 @@ protocol QuoteInteractorProtocol {
     func fetchQuoteFromNetwork(completion: @escaping (Result<Quote, Error>) -> Void)
     func saveQuoteToRealm(_ quote: Quote, completion: @escaping (Result<Void, Error>) -> Void)
     func getQuotesFromRealm() -> [Quote]
+    func getCategoriesFromRealm() -> [String]
+    func getQuotesForCategory(_ category: String) -> [Quote]
+    func removeAllQuotesFromRealm() -> Bool
+    func removeSelectedQuoteFromRealm(withID id: String) -> Bool
 }
 
 
@@ -59,6 +63,26 @@ class QuoteInteractor: QuoteInteractorProtocol {
     
     func getQuotesFromRealm() -> [Quote] {
         return realmService.fetchQuotes()
+    }
+    
+    func getCategoriesFromRealm() -> [String] {
+        let categoriesSet = Set(realmService.fetchCategories())
+        let categories = Array(categoriesSet)
+        return categories
+       }
+    
+    func getQuotesForCategory(_ category: String) -> [Quote] {
+        let allQuotes = realmService.fetchQuotes()
+        let quotesForCategory = allQuotes.filter { $0.category == category }
+        return quotesForCategory
+    }
+    
+    func removeAllQuotesFromRealm() -> Bool {
+        realmService.removeAllQuotes()
+    }
+    
+    func removeSelectedQuoteFromRealm(withID id: String) -> Bool {
+        realmService.deleteQuote(usingID: id)
     }
 }
 

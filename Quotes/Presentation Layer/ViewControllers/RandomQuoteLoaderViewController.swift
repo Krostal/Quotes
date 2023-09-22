@@ -15,7 +15,6 @@ final class RandomQuoteLoaderViewController: UIViewController {
     
     @IBAction func actionButtonPressed(_ sender: UIButton) {
         fetchRandomQuote()
-        print("Кнопку нажал")
     }
     
     override func viewDidLoad() {
