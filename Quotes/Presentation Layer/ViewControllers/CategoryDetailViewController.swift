@@ -35,7 +35,6 @@ extension CategoryDetailViewController: UITableViewDataSource, UITableViewDelega
             return UITableViewCell()
         }
         
-        
         let quote = quotes[indexPath.row]
         
         cell.configure(with: quote)

@@ -31,6 +31,7 @@ final class CategoryListViewController: UIViewController {
     
     private func fetchCategoryAndUpdateTable() {
         categories = interactor.getCategoriesFromRealm()
+        categories.sort()
         tableView.reloadData()
     }
 }
