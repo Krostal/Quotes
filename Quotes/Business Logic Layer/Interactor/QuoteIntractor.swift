@@ -9,6 +9,7 @@ protocol QuoteInteractorProtocol {
     func getQuotesForCategory(_ category: String) -> [Quote]
     func removeAllQuotesFromRealm() -> Bool
     func removeSelectedQuoteFromRealm(withID id: String) -> Bool
+    func removeAllQuotesInCategoryFromRealm(category: String) -> Bool
 }
 
 
@@ -83,6 +84,10 @@ class QuoteInteractor: QuoteInteractorProtocol {
     
     func removeSelectedQuoteFromRealm(withID id: String) -> Bool {
         realmService.deleteQuote(usingID: id)
+    }
+    
+    func removeAllQuotesInCategoryFromRealm(category: String) -> Bool {
+        realmService.removeAllQuotesInCategory(category: category)
     }
 }
 

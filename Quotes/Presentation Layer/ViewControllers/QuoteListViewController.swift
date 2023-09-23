@@ -24,7 +24,7 @@ final class QuoteListViewController: UIViewController {
         tableView.reloadData()
     }
     
-    @IBAction func deleteButtonTapped(_ sender: UIBarButtonItem) {
+    @IBAction private func deleteButtonTapped(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Внимание!", message: "Вы действительно хотите безвозвратно удалить все цитаты?", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Да", style: .default, handler: { [weak self] _ in

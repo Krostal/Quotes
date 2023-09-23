@@ -123,7 +123,14 @@
                         <viewLayoutGuide key="safeArea" id="htT-bz-OGa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="zNH-e5-xip"/>
+                    <navigationItem key="navigationItem" id="zNH-e5-xip">
+                        <barButtonItem key="rightBarButtonItem" title="Удалить все" id="MoX-G9-Ui4">
+                            <color key="tintColor" systemColor="systemPurpleColor"/>
+                            <connections>
+                                <action selector="deleteButtonPressed:" destination="Jqk-UV-Qn7" id="Dhc-OJ-PlX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="mku-Xz-TNA" id="Bar-OH-9Lz"/>
                     </connections>

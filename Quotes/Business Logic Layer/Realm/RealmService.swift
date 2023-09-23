@@ -7,6 +7,7 @@ protocol RealmServicProtocol {
     func deleteQuote(usingID id: String) -> Bool
     func removeAllQuotes() -> Bool
     func fetchCategories() -> [String]
+    func removeAllQuotesInCategory(category: String) -> Bool
 }
 
 final class RealmService: RealmServicProtocol {
@@ -108,6 +109,30 @@ final class RealmService: RealmServicProtocol {
         } catch {
             print(error.localizedDescription)
             return []
+        }
+    }
+    
+    func removeAllQuotesInCategory(category: String) -> Bool {
+        do {
+            let realm = try Realm()
+            
+            let objects = realm.objects(QuoteRealmModel.self).filter{ $0.category == category }
+            let handler: () -> Void = {
+                realm.delete(objects)
+                print(objects)
+            }
+            
+            if realm.isInWriteTransaction {
+                handler()
+            } else {
+                try realm.write {
+                    handler()
+                }
+            }
+            return true
+        } catch {
+            print(error.localizedDescription)
+            return false
         }
     }
 }
