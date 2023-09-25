@@ -1,7 +1,7 @@
 import Foundation
 
 final class DataService<T: Decodable> {
-    static func fetchData(from urlString: String, completion: @escaping (Result<T,FetchDataError>) -> Void) {
+    func fetchData(from urlString: String, completion: @escaping (Result<T,FetchDataError>) -> Void) {
         
         guard let url = URL(string: urlString) else {
             completion(.failure(.invalidURL))

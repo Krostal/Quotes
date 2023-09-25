@@ -1,12 +1,8 @@
 
 import UIKit
 
-final class QuotesListCellTableViewCell: UITableViewCell {
+class CategoryDetailTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var dateLabel: UILabel!
-    
-    @IBOutlet weak var categoryLabel: UILabel!
-    
     @IBOutlet weak var quoteLabel: UILabel!
     
     override func awakeFromNib() {
@@ -15,15 +11,12 @@ final class QuotesListCellTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
 
 }
 
-extension QuotesListCellTableViewCell: Configurable {
+extension CategoryDetailTableViewCell: Configurable {
     func configure(with model: Quote) {
-        dateLabel.text = model.date
-        categoryLabel.text = model.category
         quoteLabel.text = "\"\(model.text)\""
     }
 }

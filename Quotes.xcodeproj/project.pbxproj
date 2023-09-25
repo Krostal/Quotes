@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0900FA702ABD6D24007D93DB /* CategoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0900FA6F2ABD6D24007D93DB /* CategoryDetailViewController.swift */; };
+		0900FA722ABD71B4007D93DB /* CategoryDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0900FA712ABD71B4007D93DB /* CategoryDetailTableViewCell.swift */; };
+		0900FA742ABD73BA007D93DB /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0900FA732ABD73BA007D93DB /* ConfigurableCell.swift */; };
 		0929B7CA2ABC49FF00D5CFB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929B7C92ABC49FF00D5CFB4 /* AppDelegate.swift */; };
 		0929B7CC2ABC49FF00D5CFB4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929B7CB2ABC49FF00D5CFB4 /* SceneDelegate.swift */; };
 		0929B7D12ABC49FF00D5CFB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0929B7CF2ABC49FF00D5CFB4 /* Main.storyboard */; };
@@ -16,17 +19,20 @@
 		0929B7E02ABC57FD00D5CFB4 /* QuoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929B7DF2ABC57FD00D5CFB4 /* QuoteListViewController.swift */; };
 		0929B7E22ABC582100D5CFB4 /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929B7E12ABC582100D5CFB4 /* CategoryListViewController.swift */; };
 		0929B7E92ABC66B300D5CFB4 /* QuotesListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929B7E82ABC66B300D5CFB4 /* QuotesListCellTableViewCell.swift */; };
-		0929B7ED2ABC7FB000D5CFB4 /* Qoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929B7EC2ABC7FB000D5CFB4 /* Qoute.swift */; };
-		0929B7EF2ABC89A600D5CFB4 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929B7EE2ABC89A600D5CFB4 /* Category.swift */; };
+		0929B7ED2ABC7FB000D5CFB4 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929B7EC2ABC7FB000D5CFB4 /* Quote.swift */; };
 		0929B7F32ABC9DBC00D5CFB4 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929B7F22ABC9DBC00D5CFB4 /* RealmService.swift */; };
-		0929B7F72ABCA00600D5CFB4 /* RealManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929B7F62ABCA00600D5CFB4 /* RealManager.swift */; };
-		0929B7F92ABCA01700D5CFB4 /* QuoteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929B7F82ABCA01700D5CFB4 /* QuoteInteractor.swift */; };
-		0929B7FB2ABCA02600D5CFB4 /* CategoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929B7FA2ABCA02600D5CFB4 /* CategoryInteractor.swift */; };
 		0929B8002ABCA33400D5CFB4 /* FetchDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929B7FF2ABCA33400D5CFB4 /* FetchDataError.swift */; };
 		0929B8022ABCA36B00D5CFB4 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929B8012ABCA36B00D5CFB4 /* DataService.swift */; };
+		0929B8052ABD2B2600D5CFB4 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0929B8042ABD2B2600D5CFB4 /* Realm */; };
+		0929B8072ABD2B2600D5CFB4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0929B8062ABD2B2600D5CFB4 /* RealmSwift */; };
+		0929B80D2ABD33CA00D5CFB4 /* QuoteRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929B80C2ABD33CA00D5CFB4 /* QuoteRealmModel.swift */; };
+		0929B8112ABD42F800D5CFB4 /* QuoteIntractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929B8102ABD42F800D5CFB4 /* QuoteIntractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0900FA6F2ABD6D24007D93DB /* CategoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailViewController.swift; sourceTree = "<group>"; };
+		0900FA712ABD71B4007D93DB /* CategoryDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailTableViewCell.swift; sourceTree = "<group>"; };
+		0900FA732ABD73BA007D93DB /* ConfigurableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
 		0929B7C62ABC49FF00D5CFB4 /* Quotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0929B7C92ABC49FF00D5CFB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0929B7CB2ABC49FF00D5CFB4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,14 +44,12 @@
 		0929B7DF2ABC57FD00D5CFB4 /* QuoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteListViewController.swift; sourceTree = "<group>"; };
 		0929B7E12ABC582100D5CFB4 /* CategoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
 		0929B7E82ABC66B300D5CFB4 /* QuotesListCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesListCellTableViewCell.swift; sourceTree = "<group>"; };
-		0929B7EC2ABC7FB000D5CFB4 /* Qoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qoute.swift; sourceTree = "<group>"; };
-		0929B7EE2ABC89A600D5CFB4 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		0929B7EC2ABC7FB000D5CFB4 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		0929B7F22ABC9DBC00D5CFB4 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
-		0929B7F62ABCA00600D5CFB4 /* RealManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealManager.swift; sourceTree = "<group>"; };
-		0929B7F82ABCA01700D5CFB4 /* QuoteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteInteractor.swift; sourceTree = "<group>"; };
-		0929B7FA2ABCA02600D5CFB4 /* CategoryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryInteractor.swift; sourceTree = "<group>"; };
 		0929B7FF2ABCA33400D5CFB4 /* FetchDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDataError.swift; sourceTree = "<group>"; };
 		0929B8012ABCA36B00D5CFB4 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		0929B80C2ABD33CA00D5CFB4 /* QuoteRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteRealmModel.swift; sourceTree = "<group>"; };
+		0929B8102ABD42F800D5CFB4 /* QuoteIntractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteIntractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0929B8072ABD2B2600D5CFB4 /* RealmSwift in Frameworks */,
+				0929B8052ABD2B2600D5CFB4 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,8 +85,9 @@
 			isa = PBXGroup;
 			children = (
 				0929B7E62ABC5BAB00D5CFB4 /* App Layer */,
-				0929B7E32ABC591800D5CFB4 /* Presentation Layer */,
 				0929B7E42ABC5ADA00D5CFB4 /* Business Logic Layer */,
+				0929B80B2ABD334F00D5CFB4 /* Core Layer */,
+				0929B7E32ABC591800D5CFB4 /* Presentation Layer */,
 				0929B7E52ABC5AF700D5CFB4 /* Resources */,
 			);
 			path = Quotes;
@@ -99,7 +106,7 @@
 		0929B7E42ABC5ADA00D5CFB4 /* Business Logic Layer */ = {
 			isa = PBXGroup;
 			children = (
-				0929B7FE2ABCA0A000D5CFB4 /* Interactors */,
+				0929B80F2ABD42E400D5CFB4 /* Interactor */,
 				0929B7FD2ABCA08F00D5CFB4 /* Realm */,
 				0929B7FC2ABCA08300D5CFB4 /* NetworkService */,
 			);
@@ -132,6 +139,9 @@
 				0929B7DF2ABC57FD00D5CFB4 /* QuoteListViewController.swift */,
 				0929B7E82ABC66B300D5CFB4 /* QuotesListCellTableViewCell.swift */,
 				0929B7E12ABC582100D5CFB4 /* CategoryListViewController.swift */,
+				0900FA6F2ABD6D24007D93DB /* CategoryDetailViewController.swift */,
+				0900FA712ABD71B4007D93DB /* CategoryDetailTableViewCell.swift */,
+				0900FA732ABD73BA007D93DB /* ConfigurableCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -139,8 +149,7 @@
 		0929B7F12ABC9D1400D5CFB4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0929B7EC2ABC7FB000D5CFB4 /* Qoute.swift */,
-				0929B7EE2ABC89A600D5CFB4 /* Category.swift */,
+				0929B7EC2ABC7FB000D5CFB4 /* Quote.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -158,18 +167,32 @@
 			isa = PBXGroup;
 			children = (
 				0929B7F22ABC9DBC00D5CFB4 /* RealmService.swift */,
-				0929B7F62ABCA00600D5CFB4 /* RealManager.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
 		};
-		0929B7FE2ABCA0A000D5CFB4 /* Interactors */ = {
+		0929B80B2ABD334F00D5CFB4 /* Core Layer */ = {
 			isa = PBXGroup;
 			children = (
-				0929B7F82ABCA01700D5CFB4 /* QuoteInteractor.swift */,
-				0929B7FA2ABCA02600D5CFB4 /* CategoryInteractor.swift */,
+				0929B80E2ABD362A00D5CFB4 /* Models */,
 			);
-			path = Interactors;
+			path = "Core Layer";
+			sourceTree = "<group>";
+		};
+		0929B80E2ABD362A00D5CFB4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0929B80C2ABD33CA00D5CFB4 /* QuoteRealmModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0929B80F2ABD42E400D5CFB4 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				0929B8102ABD42F800D5CFB4 /* QuoteIntractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +211,10 @@
 			dependencies = (
 			);
 			name = Quotes;
+			packageProductDependencies = (
+				0929B8042ABD2B2600D5CFB4 /* Realm */,
+				0929B8062ABD2B2600D5CFB4 /* RealmSwift */,
+			);
 			productName = Quotes;
 			productReference = 0929B7C62ABC49FF00D5CFB4 /* Quotes.app */;
 			productType = "com.apple.product-type.application";
@@ -216,6 +243,9 @@
 				Base,
 			);
 			mainGroup = 0929B7BD2ABC49FF00D5CFB4;
+			packageReferences = (
+				0929B8032ABD2B2600D5CFB4 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 0929B7C72ABC49FF00D5CFB4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -243,20 +273,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0929B7ED2ABC7FB000D5CFB4 /* Qoute.swift in Sources */,
+				0900FA742ABD73BA007D93DB /* ConfigurableCell.swift in Sources */,
+				0929B7ED2ABC7FB000D5CFB4 /* Quote.swift in Sources */,
 				0929B7CA2ABC49FF00D5CFB4 /* AppDelegate.swift in Sources */,
+				0900FA722ABD71B4007D93DB /* CategoryDetailTableViewCell.swift in Sources */,
+				0900FA702ABD6D24007D93DB /* CategoryDetailViewController.swift in Sources */,
 				0929B7E22ABC582100D5CFB4 /* CategoryListViewController.swift in Sources */,
 				0929B7E92ABC66B300D5CFB4 /* QuotesListCellTableViewCell.swift in Sources */,
 				0929B8002ABCA33400D5CFB4 /* FetchDataError.swift in Sources */,
-				0929B7F92ABCA01700D5CFB4 /* QuoteInteractor.swift in Sources */,
 				0929B7F32ABC9DBC00D5CFB4 /* RealmService.swift in Sources */,
 				0929B7E02ABC57FD00D5CFB4 /* QuoteListViewController.swift in Sources */,
 				0929B8022ABCA36B00D5CFB4 /* DataService.swift in Sources */,
 				0929B7DE2ABC571500D5CFB4 /* RandomQuoteLoaderViewController.swift in Sources */,
 				0929B7CC2ABC49FF00D5CFB4 /* SceneDelegate.swift in Sources */,
-				0929B7FB2ABCA02600D5CFB4 /* CategoryInteractor.swift in Sources */,
-				0929B7EF2ABC89A600D5CFB4 /* Category.swift in Sources */,
-				0929B7F72ABCA00600D5CFB4 /* RealManager.swift in Sources */,
+				0929B80D2ABD33CA00D5CFB4 /* QuoteRealmModel.swift in Sources */,
+				0929B8112ABD42F800D5CFB4 /* QuoteIntractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +507,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0929B8032ABD2B2600D5CFB4 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 10.42.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0929B8042ABD2B2600D5CFB4 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0929B8032ABD2B2600D5CFB4 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		0929B8062ABD2B2600D5CFB4 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0929B8032ABD2B2600D5CFB4 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0929B7BE2ABC49FF00D5CFB4 /* Project object */;
 }
