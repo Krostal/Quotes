@@ -27,6 +27,8 @@
 		0929B8072ABD2B2600D5CFB4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0929B8062ABD2B2600D5CFB4 /* RealmSwift */; };
 		0929B80D2ABD33CA00D5CFB4 /* QuoteRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929B80C2ABD33CA00D5CFB4 /* QuoteRealmModel.swift */; };
 		0929B8112ABD42F800D5CFB4 /* QuoteIntractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929B8102ABD42F800D5CFB4 /* QuoteIntractor.swift */; };
+		09A2CFB62ACA8B1100083AEF /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2CFB52ACA8B1100083AEF /* KeychainService.swift */; };
+		09A2CFB92ACA8BF700083AEF /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 09A2CFB82ACA8BF700083AEF /* KeychainAccess */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,7 @@
 		0929B8012ABCA36B00D5CFB4 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		0929B80C2ABD33CA00D5CFB4 /* QuoteRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteRealmModel.swift; sourceTree = "<group>"; };
 		0929B8102ABD42F800D5CFB4 /* QuoteIntractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteIntractor.swift; sourceTree = "<group>"; };
+		09A2CFB52ACA8B1100083AEF /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,7 @@
 			files = (
 				0929B8072ABD2B2600D5CFB4 /* RealmSwift in Frameworks */,
 				0929B8052ABD2B2600D5CFB4 /* Realm in Frameworks */,
+				09A2CFB92ACA8BF700083AEF /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +110,7 @@
 		0929B7E42ABC5ADA00D5CFB4 /* Business Logic Layer */ = {
 			isa = PBXGroup;
 			children = (
+				09A2CFB42ACA8AFE00083AEF /* KeychainService */,
 				0929B80F2ABD42E400D5CFB4 /* Interactor */,
 				0929B7FD2ABCA08F00D5CFB4 /* Realm */,
 				0929B7FC2ABCA08300D5CFB4 /* NetworkService */,
@@ -195,6 +200,14 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		09A2CFB42ACA8AFE00083AEF /* KeychainService */ = {
+			isa = PBXGroup;
+			children = (
+				09A2CFB52ACA8B1100083AEF /* KeychainService.swift */,
+			);
+			path = KeychainService;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -214,6 +227,7 @@
 			packageProductDependencies = (
 				0929B8042ABD2B2600D5CFB4 /* Realm */,
 				0929B8062ABD2B2600D5CFB4 /* RealmSwift */,
+				09A2CFB82ACA8BF700083AEF /* KeychainAccess */,
 			);
 			productName = Quotes;
 			productReference = 0929B7C62ABC49FF00D5CFB4 /* Quotes.app */;
@@ -227,7 +241,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					0929B7C52ABC49FF00D5CFB4 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -245,6 +259,7 @@
 			mainGroup = 0929B7BD2ABC49FF00D5CFB4;
 			packageReferences = (
 				0929B8032ABD2B2600D5CFB4 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				09A2CFB72ACA8BF700083AEF /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = 0929B7C72ABC49FF00D5CFB4 /* Products */;
 			projectDirPath = "";
@@ -286,6 +301,7 @@
 				0929B8022ABCA36B00D5CFB4 /* DataService.swift in Sources */,
 				0929B7DE2ABC571500D5CFB4 /* RandomQuoteLoaderViewController.swift in Sources */,
 				0929B7CC2ABC49FF00D5CFB4 /* SceneDelegate.swift in Sources */,
+				09A2CFB62ACA8B1100083AEF /* KeychainService.swift in Sources */,
 				0929B80D2ABD33CA00D5CFB4 /* QuoteRealmModel.swift in Sources */,
 				0929B8112ABD42F800D5CFB4 /* QuoteIntractor.swift in Sources */,
 			);
@@ -349,6 +365,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -409,6 +426,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -517,6 +535,14 @@
 				minimumVersion = 10.42.3;
 			};
 		};
+		09A2CFB72ACA8BF700083AEF /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -529,6 +555,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0929B8032ABD2B2600D5CFB4 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		09A2CFB82ACA8BF700083AEF /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09A2CFB72ACA8BF700083AEF /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
